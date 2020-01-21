@@ -20,7 +20,10 @@ ul {
 
 
 /* 布局设定 */
-
+/* flex布局水平对齐 */
+.bl-df{
+	display: flex;
+}
 /* flex布局水平居中对齐 */
 .bl-df-center {
 	display: flex;
@@ -203,22 +206,29 @@ h6 {
 
 /* 标题样式黑色 */
 .bl-title {
-	font-size: 25px;
+	font-size: 24px;
 	font-weight: 700;
 	color: #333;
 }
 
 /* 子标题样式 */
 .bl-sub-title {
-	font-size: 18px;
+	font-size: 16px;
+	font-weight: 700;
 	color: #333;
 	margin-bottom: 10px;
 }
 
 /* 备注字体 */
 .bl-meta {
-	font-size: 15px;
+	font-size: 14px;
 	color: #969696;
+}
+/* 灰色加粗正常大小 */
+.bl-gry-whigt-16px{
+	color: #8590a6;
+	font-size: 16px;
+	font-weight: 600;
 }
 
 /*标题样式*/
@@ -364,4 +374,9 @@ hr {
 /*阴影样式*/
 .bl-shadow {
 	box-shadow: 0 5px 20px rgba(0, 0, 0, .1);
+}
+
+/* 图标颜色 */
+.icon-explore{
+	fill: #0084ff;
 }
