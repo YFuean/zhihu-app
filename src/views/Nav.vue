@@ -62,7 +62,7 @@
 		width: 80%;
 		margin: 0 auto;
 		height: 50px;
-}
+    }
 	.nav-bar {
 		position: relative;
 		top: -30px;

@@ -2,7 +2,10 @@
 	<div class="body">
 		<!-- 专题 -->
 		<div class="banner">
-			<svg class="icon-explore" fill="currentColor" viewBox="0 0 24 24" width="36" height="36"><path d="M7.667 3.667h11.466a1.2 1.2 0 0 1 1.2 1.2v13.066a2.4 2.4 0 0 1-2.4 2.4H6.467V4.867a1.2 1.2 0 0 1 1.2-1.2zM4.2 9.619h1.689v10.714H5.4a2.4 2.4 0 0 1-2.4-2.4V10.82a1.2 1.2 0 0 1 1.2-1.2zm5.178-2.38a.6.6 0 0 0-.6.6v.585a.6.6 0 0 0 .6.6h8.044a.6.6 0 0 0 .6-.6v-.586a.6.6 0 0 0-.6-.6H9.378zm0 3.57a.6.6 0 0 0-.6.6v.586a.6.6 0 0 0 .6.6h8.044a.6.6 0 0 0 .6-.6v-.585a.6.6 0 0 0-.6-.6H9.378zm0 3.572a.6.6 0 0 0-.6.6v.586a.6.6 0 0 0 .6.6h4.578a.6.6 0 0 0 .6-.6v-.586a.6.6 0 0 0-.6-.6H9.378z" fill-rule="evenodd"></path></svg>
+			<svg class="icon-explore" fill="currentColor" viewBox="0 0 24 24" width="36" height="36">
+				<path d="M7.667 3.667h11.466a1.2 1.2 0 0 1 1.2 1.2v13.066a2.4 2.4 0 0 1-2.4 2.4H6.467V4.867a1.2 1.2 0 0 1 1.2-1.2zM4.2 9.619h1.689v10.714H5.4a2.4 2.4 0 0 1-2.4-2.4V10.82a1.2 1.2 0 0 1 1.2-1.2zm5.178-2.38a.6.6 0 0 0-.6.6v.585a.6.6 0 0 0 .6.6h8.044a.6.6 0 0 0 .6-.6v-.586a.6.6 0 0 0-.6-.6H9.378zm0 3.57a.6.6 0 0 0-.6.6v.586a.6.6 0 0 0 .6.6h8.044a.6.6 0 0 0 .6-.6v-.585a.6.6 0 0 0-.6-.6H9.378zm0 3.572a.6.6 0 0 0-.6.6v.586a.6.6 0 0 0 .6.6h4.578a.6.6 0 0 0 .6-.6v-.586a.6.6 0 0 0-.6-.6H9.378z"
+				 fill-rule="evenodd"></path>
+			</svg>
 			<h3>最新专题</h3>
 		</div>
 		<div class="cards">
@@ -28,7 +31,9 @@
 		<!-- 圆桌讨论 -->
 		<div class="banner">
 			<svg class="icon-explore" fill="currentColor" viewBox="0 0 24 24" width="36" height="36">
-				<path d="M12 21.333a9.333 9.333 0 1 1 0-18.666 9.333 9.333 0 0 1 0 18.666zm-.66-11.287c.332.385.609.77.775 1.21.055-.054.665-.99.72-1.706.055-.385.126-1.616-.443-2.367-.443-.496-1.219-.77-1.884-.55a1.788 1.788 0 0 0-1.33 2.036c.887.276 1.607.771 2.161 1.377zm-1.33 1.541c.443-.055.941-.11 1.44 0 0-.055-.484-.936-1.108-1.486-.665-.496-1.33-.973-2.216-.771-.72.11-1.723.77-1.55 2.092.11.606.553 1.101 1.162 1.321.61-.605 1.44-1.046 2.272-1.156zm2.714.165c.056 0 1.164.055 1.828-.165.72-.275 1.412-.68 1.773-1.541.11-.276.23-1.248-.443-1.872-.72-.716-1.717-.716-2.438-.165.222.825.063 1.966-.11 2.532-.103.348-.333.88-.61 1.211zm-1.44.55c-.056 0-1.33.056-1.828.221-.72.275-1.447.668-1.773 1.541-.11.276-.21 1.26.443 1.872.665.661 1.718.661 2.438.11-.295-.811-.166-1.761.055-2.477.166-.495.388-.936.665-1.266zm5.041-.99c-.665.605-1.44.99-2.327 1.211-.443.055-.941.11-1.44 0 0 .055.554.991 1.108 1.431.665.496 1.385.771 2.216.771.72-.11 1.678-.692 1.551-2.092-.055-.605-.554-1.101-1.108-1.321zm-3.656 2.642a3.475 3.475 0 0 1-.776-1.156c-.055.055-.665.991-.72 1.707-.055.385-.101 1.506.499 2.312.443.496 1.218.77 1.883.55.887-.275 1.496-1.1 1.33-2.036a5.38 5.38 0 0 1-2.216-1.377z" fill-rule="evenodd"></path></svg>
+				<path d="M12 21.333a9.333 9.333 0 1 1 0-18.666 9.333 9.333 0 0 1 0 18.666zm-.66-11.287c.332.385.609.77.775 1.21.055-.054.665-.99.72-1.706.055-.385.126-1.616-.443-2.367-.443-.496-1.219-.77-1.884-.55a1.788 1.788 0 0 0-1.33 2.036c.887.276 1.607.771 2.161 1.377zm-1.33 1.541c.443-.055.941-.11 1.44 0 0-.055-.484-.936-1.108-1.486-.665-.496-1.33-.973-2.216-.771-.72.11-1.723.77-1.55 2.092.11.606.553 1.101 1.162 1.321.61-.605 1.44-1.046 2.272-1.156zm2.714.165c.056 0 1.164.055 1.828-.165.72-.275 1.412-.68 1.773-1.541.11-.276.23-1.248-.443-1.872-.72-.716-1.717-.716-2.438-.165.222.825.063 1.966-.11 2.532-.103.348-.333.88-.61 1.211zm-1.44.55c-.056 0-1.33.056-1.828.221-.72.275-1.447.668-1.773 1.541-.11.276-.21 1.26.443 1.872.665.661 1.718.661 2.438.11-.295-.811-.166-1.761.055-2.477.166-.495.388-.936.665-1.266zm5.041-.99c-.665.605-1.44.99-2.327 1.211-.443.055-.941.11-1.44 0 0 .055.554.991 1.108 1.431.665.496 1.385.771 2.216.771.72-.11 1.678-.692 1.551-2.092-.055-.605-.554-1.101-1.108-1.321zm-3.656 2.642a3.475 3.475 0 0 1-.776-1.156c-.055.055-.665.991-.72 1.707-.055.385-.101 1.506.499 2.312.443.496 1.218.77 1.883.55.887-.275 1.496-1.1 1.33-2.036a5.38 5.38 0 0 1-2.216-1.377z"
+				 fill-rule="evenodd"></path>
+			</svg>
 			<h3>圆桌讨论</h3>
 		</div>
 		<div class="cards">
@@ -36,13 +41,25 @@
 				<div class="talk" :style="{'background-image':'url('+item.banner+')'}">
 					<p class="bl-title-ffffff">{{ item.name}}</p>
 					<p class="bl-text-color-white talk-content">近期指数基金突然在知乎火了起来，各种大V、小V创作者们如雨后春笋般冒出来推荐指数基金，到底指数基金好不好，是不是真的适合小白，小白如何入门，让我们一起来探讨！</p>
-					<div class="bl-df-left"><p class="bl-meta-ffffff"><img class="talk-img" src="../assets/image/t1png.png"><img class="talk-img"  src="../assets/image/t1png.png"><img class="talk-img"  src="../assets/image/t1png.png">{{item.includeCount}}位嘉宾参与|358人次浏览</p>
-					<button class="round-btn">关注圆桌</button></div>
+					<div class="bl-df-left">
+						<p class="bl-meta-ffffff"><img class="talk-img" src="../assets/image/t1png.png"><img class="talk-img" src="../assets/image/t1png.png"><img
+							 class="talk-img" src="../assets/image/t1png.png">{{item.includeCount}}位嘉宾参与|358人次浏览</p>
+						<button class="round-btn">关注圆桌</button>
+					</div>
 				</div>
 				<div class="round-talk">
-					<div class="round-tip"><p>就教育而言，中国大学和美国大学的各自优缺点是什么？</p><p class="bl-meta">14个回答</p></div>
-					<div class="round-tip"><p>中国国民是不是素质低？根源是什么？</p><p class="bl-meta">173个回答</p></div>
-					<div class="round-tip"><p>中国科技水平和美国差距有多大？</p><p class="bl-meta">639个回答</p></div>
+					<div class="round-tip">
+						<p>就教育而言，中国大学和美国大学的各自优缺点是什么？</p>
+						<p class="bl-meta">14个回答</p>
+					</div>
+					<div class="round-tip">
+						<p>中国国民是不是素质低？根源是什么？</p>
+						<p class="bl-meta">173个回答</p>
+					</div>
+					<div class="round-tip">
+						<p>中国科技水平和美国差距有多大？</p>
+						<p class="bl-meta">639个回答</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -111,6 +128,35 @@
 			</button>
 		</div>
 
+		<!-- 专栏 -->
+		<div class="banner">
+			<svg class="icon-explore" fill="currentColor" viewBox="0 0 24 24" width="36" height="36">
+				<path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm4.043-15.524a.745.745 0 0 0-1.053.017l-6.857 7.071 2.237 2.17 6.857-7.071a.743.743 0 0 0-.016-1.052l-1.168-1.135zm-9.028 9.476l-.348 1.381 1.37-.39 1.274-.36-1.973-1.916-.323 1.285z"
+				 fill-rule="evenodd"></path>
+			</svg>
+			<h3>专栏</h3>
+		</div>
+		<div class="cards-columns">
+			<div class="card-columns" v-for="(item,index) in columns" :key="index">
+				<div class="img-columns"><img :src="item.imageUrl" class="img-co"></div>
+				<div class="columns-title">
+					<p class="bl-sub-title">{{item.title}}</p>
+				</div>
+				<div class="columns-count">
+					<p class="bl-meta">{{item.followers}}关注·{{item.articlesCount}}文章</p>
+				</div>
+				<div class=" columns-des">
+					<p class="text-columns">{{item.description}}</p>
+				</div>
+				<div class=" columns-btn"><a :href="item.url"><button class="btn-favorite">进入专栏</button></a></div>
+			</div>
+		</div>
+		<div class="btn-box">
+			<button class="btn">
+				<router-link to="/zhuanlan/columns/random" class="bl-gry-whigt-16px">查看更多专栏&nbsp;></router-link>
+			</button>
+		</div>
+
 	</div>
 </template>
 
@@ -122,7 +168,8 @@
 			return {
 				specials: [],
 				roundtable: [],
-				favorite: []
+				favorite: [],
+				columns: []
 			};
 		},
 		created() {
@@ -139,6 +186,10 @@
 				console.log(res);
 				this.favorite = res.data.data;
 			});
+			this.axios.get('http://localhost:8080/api/columns').then(res => {
+				console.log(res);
+				this.columns = res.data.data;
+			});
 		}
 	};
 </script>
@@ -146,7 +197,7 @@
 <style lang="scss" scoped>
 	.body {
 		margin-top: 62px;
-		height: 5000px;
+		height: 3600px;
 	}
 
 	h3 {
@@ -158,11 +209,23 @@
 		color: #a8b2b4;
 		font-size: 20px;
 	}
+
 	.text {
 		width: 100%;
 		overflow: hidden; //溢出内容隐藏
 		white-space: nowrap; //强制文本在一行内显示
 		text-overflow: ellipsis; //当文本溢出时显示省略标记
+	}
+
+	.btn-favorite {
+		border-radius: 3px;
+		background-color: #ebf5ff;
+		color: #6495ed;
+		font-size: 14px;
+		font-weight: 600;
+		border: none;
+		width: 102px;
+		height: 34px;
 	}
 
 	.banner {
@@ -176,6 +239,67 @@
 
 		img {
 			height: 60%;
+		}
+	}
+
+	.cards-columns {
+		width: 80%;
+		margin-right: 10%;
+		margin: 0 auto;
+		height: 340px;
+		
+		.card-columns {
+			float: left;
+			margin-right: 18px;
+			margin-bottom: 20px;
+			width: 23%;
+			height: 320px;
+			background-color: #FFFFFF;
+			border-radius: 10px;
+
+			.img-columns {
+				margin: 0 auto;
+				width: 80px;
+				margin-bottom: 20px;
+				margin-top: 20px;
+				.img-co {
+					width: 80px;
+					height: 80px;
+					border-radius: 50px;
+				}
+
+			}
+
+			.columns-title {
+				margin: 0 auto;
+				text-align: center;
+				width: 80%;
+			}
+
+			.columns-count {
+				margin: 0 auto;
+				margin-bottom: 20px;
+				text-align: center;
+				width: 80%;
+			}
+
+			.columns-des {
+				margin: 0 auto;
+				margin-bottom: 20px;
+				text-align: center;
+				height: 50px;
+				width: 80%;
+				.text-columns{
+					width: 100%;
+					height: 42px;
+					overflow: hidden; //溢出内容隐藏
+					text-overflow: ellipsis; //当文本溢出时显示省略标记
+				}
+			}
+			.columns-btn {
+				margin: 0 auto;
+				text-align: center;
+			}
 		}
 	}
 
@@ -207,15 +331,18 @@
 				width: 100%;
 				height: 230px;
 				padding: 20px 20px 20px 20px;
+
 				// border: 2px solid #000000;
-				.talk-content{
+				.talk-content {
 					margin-top: 20px;
 					margin-bottom: 20px;
 				}
-				.talk-img{
+
+				.talk-img {
 					margin-right: 6px;
 				}
-				.round-btn{
+
+				.round-btn {
 					border-radius: 3px;
 					background-color: #ffffff;
 					color: #0084ff;
@@ -225,27 +352,20 @@
 					width: 102px;
 				}
 			}
-			.round-talk{
+
+			.round-talk {
 				margin: 20px 20px 20px 20px;
-				.round-tip{
+
+				.round-tip {
 					margin-bottom: 20px;
 				}
 			}
+
 			.head-box {
 				margin: 20px 20px 20px 20px;
 
 				.title-box {
 					margin-bottom: 20px;
-
-					.btn-favorite {
-						border-radius: 3px;
-						background-color: #ebf5ff;
-						color: #6495ed;
-						font-size: 14px;
-						font-weight: 600;
-						border: none;
-						width: 102px;
-					}
 				}
 
 				.creator {
@@ -298,6 +418,7 @@
 		display: flex;
 		justify-content: center;
 		align-content: center;
+
 		.btn {
 			align-items: center;
 			padding: 0 24px 0 24px;

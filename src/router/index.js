@@ -11,13 +11,15 @@ import QuestionWaiting from '../views/QuestionWaiting.vue'
 import Login from '../views/Login.vue'
 import RoundTable from '../views/RoundTable.vue'
 import Favorite from '../views/Favorite.vue'
+import zhuanlan from '../views/ZhuanLan'
+import Columns from '../views/Columns.vue'
 Vue.use(VueRouter)
 
 const routes = [
  // 这两个为顶层路由,都拥有整个浏览器大小的布局自由度
  {
-   path: '/',
-   component: Nav,
+    path: '/',
+    component: Nav,
  	children:[{
  		path: '/',
  		redirect: 'home'
@@ -71,6 +73,18 @@ const routes = [
 		component: () => import('../views/Recommoned.vue')
 		}
  	]
+ },
+ {
+	 path:'/zhuanlan',
+	 component:zhuanlan,
+	 children:[{
+		path: '/',
+		redirect: 'columns/random'
+	 },
+	 {
+		path: 'columns/random',
+		component: () => import('../views/Columns.vue')
+	}]
  },
  {
    path: '/login',
