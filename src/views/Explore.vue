@@ -1,186 +1,175 @@
 <template>
-	<div class="body">
+	<div class="container">
 		<!-- 专题 -->
-		<div class="banner">
-			<svg class="icon-explore" fill="currentColor" viewBox="0 0 24 24" width="36" height="36">
+		<div class="d-flex p-3">
+			<svg class="blue-icon mr-3" viewBox="0 0 24 24" width="32" height="32">
 				<path d="M7.667 3.667h11.466a1.2 1.2 0 0 1 1.2 1.2v13.066a2.4 2.4 0 0 1-2.4 2.4H6.467V4.867a1.2 1.2 0 0 1 1.2-1.2zM4.2 9.619h1.689v10.714H5.4a2.4 2.4 0 0 1-2.4-2.4V10.82a1.2 1.2 0 0 1 1.2-1.2zm5.178-2.38a.6.6 0 0 0-.6.6v.585a.6.6 0 0 0 .6.6h8.044a.6.6 0 0 0 .6-.6v-.586a.6.6 0 0 0-.6-.6H9.378zm0 3.57a.6.6 0 0 0-.6.6v.586a.6.6 0 0 0 .6.6h8.044a.6.6 0 0 0 .6-.6v-.585a.6.6 0 0 0-.6-.6H9.378zm0 3.572a.6.6 0 0 0-.6.6v.586a.6.6 0 0 0 .6.6h4.578a.6.6 0 0 0 .6-.6v-.586a.6.6 0 0 0-.6-.6H9.378z"
 				 fill-rule="evenodd"></path>
 			</svg>
-			<h3>最新专题</h3>
+			<p class="title">最新专题</p>
 		</div>
-		<div class="cards">
-			<div class="card" v-for="(item,index) in specials" :key="index">
-				<div class="img"><img :src="item.banner" class="img"></div>
-				<div class="talk">
-					<h3>{{ item.title}}</h3>
-					<p class="bl-meta">{{ item.updated}} 更新，{{ item.viewCount }}次浏览</p>
-					<p class="">{{ item.introduction }}</p>
-					<div v-for="(section,index) in item.sections" :key="index" class="">
-						{{ section.sectionTitle }}
+		<div class="row justify-content-center">
+			<div class="col-6" v-for="(item, index) in specials" :key="index">
+				<div class="special-card m-3">
+					<div class="card-header"><img :src="item.banner" alt="" width="100%" height="50%" /></div>
+					<div class="card-body p-3 border-bottom">
+						<div class="left">
+							<h3>{{ item.title }}</h3>
+							<p class="meta">{{ item.updated }}更新, {{ item.viewCount }}次浏览</p>
+						</div>
+						<div class="right"><button class="fill-light-blue tiny-round blue strong">关注专题</button></div>
+					</div>
+					<div class="card-content p-4">
+						<p class="ellipsis">{{ item.introduction }}</p>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="btn-box">
-			<button class="btn">
-				<router-link to="/special/all" class="bl-gry-whigt-16px">查看更多专题&nbsp;></router-link>
-			</button>
+			<router-link to="/special/all" class="all">查看更多专题</router-link>
 		</div>
 
-
-		<!-- 圆桌讨论 -->
-		<div class="banner">
-			<svg class="icon-explore" fill="currentColor" viewBox="0 0 24 24" width="36" height="36">
+		<!-- 圆桌 -->
+		<div class="d-flex p-3 align-items-center">
+			<svg class="blue-icon mr-3" viewBox="0 0 24 24" width="36" height="36">
 				<path d="M12 21.333a9.333 9.333 0 1 1 0-18.666 9.333 9.333 0 0 1 0 18.666zm-.66-11.287c.332.385.609.77.775 1.21.055-.054.665-.99.72-1.706.055-.385.126-1.616-.443-2.367-.443-.496-1.219-.77-1.884-.55a1.788 1.788 0 0 0-1.33 2.036c.887.276 1.607.771 2.161 1.377zm-1.33 1.541c.443-.055.941-.11 1.44 0 0-.055-.484-.936-1.108-1.486-.665-.496-1.33-.973-2.216-.771-.72.11-1.723.77-1.55 2.092.11.606.553 1.101 1.162 1.321.61-.605 1.44-1.046 2.272-1.156zm2.714.165c.056 0 1.164.055 1.828-.165.72-.275 1.412-.68 1.773-1.541.11-.276.23-1.248-.443-1.872-.72-.716-1.717-.716-2.438-.165.222.825.063 1.966-.11 2.532-.103.348-.333.88-.61 1.211zm-1.44.55c-.056 0-1.33.056-1.828.221-.72.275-1.447.668-1.773 1.541-.11.276-.21 1.26.443 1.872.665.661 1.718.661 2.438.11-.295-.811-.166-1.761.055-2.477.166-.495.388-.936.665-1.266zm5.041-.99c-.665.605-1.44.99-2.327 1.211-.443.055-.941.11-1.44 0 0 .055.554.991 1.108 1.431.665.496 1.385.771 2.216.771.72-.11 1.678-.692 1.551-2.092-.055-.605-.554-1.101-1.108-1.321zm-3.656 2.642a3.475 3.475 0 0 1-.776-1.156c-.055.055-.665.991-.72 1.707-.055.385-.101 1.506.499 2.312.443.496 1.218.77 1.883.55.887-.275 1.496-1.1 1.33-2.036a5.38 5.38 0 0 1-2.216-1.377z"
 				 fill-rule="evenodd"></path>
 			</svg>
-			<h3>圆桌讨论</h3>
+			<p class="title">圆桌讨论</p>
 		</div>
-		<div class="cards">
-			<div class="card" v-for="(item,index) in roundtable" :key="index">
-				<div class="talk" :style="{'background-image':'url('+item.banner+')'}">
-					<p class="bl-title-ffffff">{{ item.name}}</p>
-					<p class="bl-text-color-white talk-content">近期指数基金突然在知乎火了起来，各种大V、小V创作者们如雨后春笋般冒出来推荐指数基金，到底指数基金好不好，是不是真的适合小白，小白如何入门，让我们一起来探讨！</p>
-					<div class="bl-df-left">
-						<p class="bl-meta-ffffff"><img class="talk-img" src="../assets/image/t1png.png"><img class="talk-img" src="../assets/image/t1png.png"><img
-							 class="talk-img" src="../assets/image/t1png.png">{{item.includeCount}}位嘉宾参与|358人次浏览</p>
-						<button class="round-btn">关注圆桌</button>
+		<div class="row justify-content-center">
+			<div class="col-6" v-for="(item, index) in roundtable" :key="index">
+				<div class="roundtable-card m-3">
+					<button class="btn-follow-table" ref="btn">关注圆桌</button>
+					<div class="card-img-wrapper" ref="box">
+						<img :src="item.banner" ref="bgImg" />
+						<div class="mask" ref="mask1"></div>
+						<div class="mask" ref="mask2"></div>
 					</div>
-				</div>
-				<div class="round-talk">
-					<div class="round-tip">
-						<p>就教育而言，中国大学和美国大学的各自优缺点是什么？</p>
-						<p class="bl-meta">14个回答</p>
+
+					<div class="info">
+						<h3 class="mb-4">{{ item.name }}</h3>
+						<p>越是前景光明，越要居安思危。打败你的并不一定是你的敌人，而是自己的故步自封。 而是自己的故步自封.而是自己的故步自封</p>
 					</div>
-					<div class="round-tip">
-						<p>中国国民是不是素质低？根源是什么？</p>
-						<p class="bl-meta">173个回答</p>
-					</div>
-					<div class="round-tip">
-						<p>中国科技水平和美国差距有多大？</p>
-						<p class="bl-meta">639个回答</p>
+					<div class="content">
+						<p>可以推荐几个值得长期投资的基金吗？</p>
+						<p class="meta">456个回答</p>
+						<p>可以推荐几个值得长期投资的基金吗？</p>
+						<p class="meta">456个回答</p>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="btn-box">
-			<button class="btn">
-				<router-link to="/roundtable/all" class="bl-gry-whigt-16px">查看更多专题&nbsp;></router-link>
-			</button>
+			<router-link to="/roundtable/all" class="all">查看更多圆桌</router-link>
 		</div>
 
 		<!-- 热门收藏夹 -->
-		<div class="banner">
-			<svg class="icon-explore" fill="currentColor" viewBox="0 0 24 24" width="36" height="36">
+		<div class="d-flex p-3 align-items-center">
+			<svg class="blue-icon mr-3" viewBox="0 0 24 24" width="36" height="36">
 				<path d="M5.515 19.64l.918-5.355-3.89-3.792c-.926-.902-.639-1.784.64-1.97L8.56 7.74l2.404-4.871c.572-1.16 1.5-1.16 2.072 0L15.44 7.74l5.377.782c1.28.186 1.566 1.068.64 1.97l-3.89 3.793.918 5.354c.219 1.274-.532 1.82-1.676 1.218L12 18.33l-4.808 2.528c-1.145.602-1.896.056-1.677-1.218z"
 				 fill-rule="evenodd"></path>
 			</svg>
-			<h3>热门收藏夹</h3>
+			<p class="title">热门收藏夹</p>
 		</div>
-		<div class="cards">
-			<div class="card" v-for="(item,index) in favorite" :key="index">
-				<div class="head-box">
-					<div class="bl-df-between title-box">
-						<p class="bl-title">{{item.title}}</p>
-						<div class="bl-df-right"><button class="btn-favorite">关注收藏夹</button></div>
-					</div>
-					<div class="bl-df-left">
+		<div class="row justify-content-center">
+			<div class="col-6" v-for="(item,index) in favorite" :key="index">
+				<div class="favorite-card m-3">
+					<div class="head-box">
+						<div class="bl-df-between title-box">
+							<p class="bl-title">{{item.title}}</p>
+							<div class="bl-df-right"><button class="btn-ligth-blue">关注收藏夹</button></div>
+						</div>
 						<div class="bl-df-left">
-							<div><img :src="item.creatorAvatar"></div>
-							<div>
-								<p class="creator">{{item.creatorName}}</p>
+							<div class="bl-df-left">
+								<div><img :src="item.creatorAvatar"></div>
+								<div>
+									<p class="creator">{{item.creatorName}}</p>
+								</div>
+							</div>
+							<div class="creator">
+								<p class="bl-meta">创建&nbsp;&nbsp;|&nbsp;&nbsp;{{item.followers}}人关注</p>
 							</div>
 						</div>
-						<div class="creator">
-							<p class="bl-meta">创建&nbsp;&nbsp;|&nbsp;&nbsp;{{item.followers}}人关注</p>
-						</div>
 					</div>
-				</div>
-				<hr class="bl-meta">
-				<div class="body-box">
-					<div class="tip-box">
-						<p class="bl-sub-title">{{item.questionTitle}}</p>
-						<div class="bl-left answer">
-							<p class="text">{{item.answerAuthorname}}:{{item.answerContent}}</p>
+					<hr class="bl-meta">
+					<div class="body-box">
+						<div class="tip-box">
+							<p class="bl-sub-title">{{item.questionTitle}}</p>
+							<div class="bl-left answer">
+								<p class="ellipsis-1">{{item.answerAuthorname}}:{{item.answerContent}}</p>
+							</div>
+							<div class="bl-left">
+								<p class="bl-meta">回答&nbsp;{{item.voteupCount}}赞同·{{item.commentCount}}评论</p>
+							</div>
 						</div>
-						<div class="bl-left">
-							<p class="bl-meta">回答&nbsp;{{item.voteupCount}}赞同·{{item.commentCount}}评论</p>
+						<div class="tip-box">
+							<p class="bl-sub-title">{{item.questionTitle}}</p>
+							<div class="bl-left answer">
+								<p class="ellipsis-1">{{item.answerAuthorname}}:{{item.answerContent}}</p>
+							</div>
+							<div class="bl-left">
+								<p class="bl-meta">回答&nbsp;{{item.voteupCount}}赞同·{{item.commentCount}}评论</p>
+							</div>
 						</div>
-					</div>
-					<div class="tip-box">
-						<p class="bl-sub-title">{{item.questionTitle}}</p>
-						<div class="bl-left answer">
-							<p class="text">{{item.answerAuthorname}}:{{item.answerContent}}</p>
+						<div>
+							<p class="bl-gry-whigt-16px">已收藏{{item.totalCount}}条内容&nbsp;></p>
 						</div>
-						<div class="bl-left">
-							<p class="bl-meta">回答&nbsp;{{item.voteupCount}}赞同·{{item.commentCount}}评论</p>
-						</div>
-					</div>
-					<div>
-						<p class="bl-gry-whigt-16px">已收藏{{item.totalCount}}条内容&nbsp;></p>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="btn-box">
-			<button class="btn">
-				<router-link to="/favorite/all" class="bl-gry-whigt-16px">查看更多收藏夹&nbsp;></router-link>
-			</button>
+			<router-link to="/favorite/all" class="all">查看更多专题</router-link>
 		</div>
 
 		<!-- 专栏 -->
-		<div class="banner">
-			<svg class="icon-explore" fill="currentColor" viewBox="0 0 24 24" width="36" height="36">
+		<div class="d-flex p-3 align-items-center">
+			<svg class="blue-icon mr-3" viewBox="0 0 24 24" width="36" height="36">
 				<path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm4.043-15.524a.745.745 0 0 0-1.053.017l-6.857 7.071 2.237 2.17 6.857-7.071a.743.743 0 0 0-.016-1.052l-1.168-1.135zm-9.028 9.476l-.348 1.381 1.37-.39 1.274-.36-1.973-1.916-.323 1.285z"
 				 fill-rule="evenodd"></path>
 			</svg>
-			<h3>专栏</h3>
+			<p class="title">专栏</p>
 		</div>
-		<div class="cards-columns">
-			<div class="card-columns" v-for="(item,index) in columns" :key="index">
-				<div class="img-columns"><img :src="item.imageUrl" class="img-co"></div>
-				<div class="columns-title">
-					<p class="bl-sub-title">{{item.title}}</p>
+		<div class="row justify-content-center">
+			<div class="bl-df-between">
+				<div class="col-3" v-for="(item,index) in columns" :key="index">
+					<div class="columns-card m-3">
+						<div class="img-columns"><img :src="item.imageUrl" class="img-co"></div>
+						<div class="columns-title">
+							<p class="bl-sub-title">{{item.title}}</p>
+						</div>
+						<div class="columns-count">
+							<p class="meta">{{item.followers}}关注·{{item.articlesCount}}文章</p>
+						</div>
+						<div class=" columns-des">
+							<p class="text-columns">{{item.description}}</p>
+						</div>
+						<div class="columns-btn"><a :href="item.url"><button class="btn-ligth-blue">进入专栏</button></a></div>
+					</div>
 				</div>
-				<div class="columns-count">
-					<p class="bl-meta">{{item.followers}}关注·{{item.articlesCount}}文章</p>
-				</div>
-				<div class=" columns-des">
-					<p class="text-columns">{{item.description}}</p>
-				</div>
-				<div class=" columns-btn"><a :href="item.url"><button class="btn-favorite">进入专栏</button></a></div>
 			</div>
+			<router-link to="/zhuanlan/columns/random" class="all">查看更多专栏</router-link>
 		</div>
-		<div class="btn-box">
-			<button class="btn">
-				<router-link to="/zhuanlan/columns/random" class="bl-gry-whigt-16px">查看更多专栏&nbsp;></router-link>
-			</button>
+		<div class="m-0 m-auto mt-4 mb-4 tx-center">
+			<p class="meta">刘看山·知乎指南·知乎协议·应用·工作·联系我们© 2020 知乎</p>
 		</div>
-
 	</div>
 </template>
 
 <script>
 	export default {
 		name: 'explore',
-
 		data() {
 			return {
 				specials: [],
 				roundtable: [],
 				favorite: [],
-				columns: []
+				columns: [],
+				dominant: '',
+				secondary: ''
 			};
 		},
+		mounted() {},
 		created() {
 			this.axios.get('http://localhost:8080/api/special').then(res => {
 				console.log(res);
 				console.log("ceece")
 				this.specials = res.data.data;
-			});
-			this.axios.get('http://localhost:8080/api/roundtable').then(res => {
-				console.log(res);
-				this.roundtable = res.data.data;
 			});
 			this.axios.get('http://localhost:8080/api/favorite').then(res => {
 				console.log(res);
@@ -190,34 +179,261 @@
 				console.log(res);
 				this.columns = res.data.data;
 			});
-		}
+			this.axios.get('http://localhost:8080/api/roundtable').then(res => {
+				console.log(res);
+				this.roundtable = res.data.data;
+				this.$nextTick(() => {
+					//获得循环中的引用对象，都将会是数组的形式
+					let boxArr = this.$refs.box;
+					let imgArry = this.$refs.bgImg;
+					let btnArr = this.$refs.btn;
+					let mask1Arr = this.$refs.mask1;
+					let mask2Arr = this.$refs.mask2;
+					//遍历，对每个对象进行处理
+					for (var i = 0, len = boxArr.length; i < len; i++) {
+						let box = boxArr[i];
+						let img = imgArry[i];
+						let btn = btnArr[i];
+						let mask1 = mask1Arr[i];
+						let mask2 = mask2Arr[i];
+						//第三方库，可以获取图片的主色、次色等
+						RGBaster.colors(img, {
+							success: function(payload) {
+								// payload.dominant是主色，payload.secondary是次色, payload.palette是调色板，含多个主要颜色数组,RGB形式表示
+								this.dominant = payload.dominant;
+								this.secondary = payload.secondary;
+								// console.log('主色：' + payload.dominant);
+								//去掉rgb的外层rgb字母和括号，得到112,34,56这样的值
+								let str = payload.dominant.substring(4, payload.dominant.length - 1);
+								//按逗号分割，得到字符串数组
+								let strArr = str.split(',');
+								//分别获得r,g,b的值，并转为整型
+								let r = parseInt(strArr[0]);
+								let g = parseInt(strArr[1]);
+								let b = parseInt(strArr[2]);
+								// console.log(r + '=>' + g + '=>' + b);
+								//定义两个透明度的值
+								let a1 = 0;
+								let a2 = 0.5;
+								//创建两个rgba颜色，用来生成遮罩层的渐变色
+								let color1 = `rgba(${r},${g},${b},${a1})`;
+								let color2 = `rgba(${r},${g},${b},${a2})`;
+								// console.log('颜色1：' + color1);
+								// console.log('颜色2：' + color2);
+								//圆桌卡片顶部整宽部分背景色设置为图片主色
+								box.style.backgroundColor = this.dominant;
+								//右侧logo图覆盖两层蒙版，使用以下渐变色规则
+								mask1.style.background = 'linear-gradient(to right,' + this.dominant + ' 0%,' + color1 + ' 100%)';
+								mask2.style.background = 'linear-gradient(to right,' + color2 + ' 0%,' + color1 + ' 100%)';
+								//关注按钮的文字颜色，使用图片主色
+								btn.style.color = this.dominant;
+							}
+						});
+					}
+				});
+			});
+		},
+		methods: {}
 	};
 </script>
 
 <style lang="scss" scoped>
-	.body {
-		margin-top: 62px;
-		height: 3600px;
+	.special-card {
+		height: 430px;
+		border: 1px solid #eee;
+		box-sizing: border-box;
+		border-radius: 5px;
+		box-shadow: 0 1px 3px 0 rgba(26, 26, 26, 0.1);
+		background-color: #fff;
+
+		.card-header {
+			height: 50%;
+
+			img {
+				width: 100%;
+				height: 100%;
+				border-top-left-radius: 5px;
+				border-top-right-radius: 5px;
+			}
+		}
+
+		.card-body {
+			display: flex;
+			justify-content: space-between;
+			line-height: 26px;
+
+			.left {
+				flex: 0 0 70%;
+			}
+
+			.right {
+				button {
+					width: 102px;
+					height: 35px;
+				}
+			}
+		}
 	}
 
-	h3 {
-		color: #1a1a1a;
-		font-size: 30px;
+	.roundtable-card {
+		height: 430px;
+		border: 1px solid #eee;
+		box-sizing: border-box;
+		border-radius: 5px;
+		box-shadow: 0 1px 3px 0 rgba(26, 26, 26, 0.1);
+		background-color: #fff;
+		position: relative;
+
+		.btn-follow-table {
+			position: absolute;
+			right: 10%;
+			top: 40%;
+			flex-shrink: 0;
+			width: 88px;
+			height: 34px;
+			background-color: #fff;
+			font-size: 14px;
+			font-weight: 600;
+			border-radius: 3px;
+			z-index: 200;
+		}
+
+		.card-img-wrapper {
+			position: relative;
+			width: 100%;
+			height: 240px;
+			border-top-left-radius: 5px;
+			border-top-right-radius: 5px;
+
+			img,
+			.mask {
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 240px;
+				height: 240px;
+				border-top-right-radius: 5px;
+			}
+
+			img {
+				z-index: 90;
+			}
+
+			.mask {
+				z-index: 100;
+			}
+		}
+
+		.info {
+			position: absolute;
+			top: 15%;
+			left: 5%;
+			width: 65%;
+			color: #fff;
+			z-index: 200;
+		}
+
+		.content {
+			position: absolute;
+			left: 5%;
+			bottom: 10%;
+			line-height: 26px;
+		}
 	}
 
-	h4 {
-		color: #a8b2b4;
-		font-size: 20px;
+	.favorite-card {
+		height: 430px;
+		border: 1px solid #eee;
+		box-sizing: border-box;
+		border-radius: 5px;
+		box-shadow: 0 1px 3px 0 rgba(26, 26, 26, 0.1);
+		background-color: #fff;
+		position: relative;
+
+		.head-box {
+			margin: 20px 20px 20px 20px;
+
+			.title-box {
+				margin-bottom: 20px;
+			}
+
+			.creator {
+				margin-left: 8px;
+				margin-top: 8px;
+			}
+		}
+
+		.body-box {
+			margin: 20px 20px 20px 20px;
+
+			.tip-box {
+				margin-bottom: 20px;
+
+				.answer {
+					margin-top: 10px;
+					margin-bottom: 10px;
+				}
+			}
+		}
 	}
 
-	.text {
-		width: 100%;
-		overflow: hidden; //溢出内容隐藏
-		white-space: nowrap; //强制文本在一行内显示
-		text-overflow: ellipsis; //当文本溢出时显示省略标记
+	.columns-card {
+		height: 330px;
+		border: 1px solid #eee;
+		box-sizing: border-box;
+		border-radius: 5px;
+		box-shadow: 0 1px 3px 0 rgba(26, 26, 26, 0.1);
+		background-color: #fff;
+		position: relative;
+
+		.img-columns {
+			margin: 0 auto;
+			width: 80px;
+			margin-bottom: 20px;
+			margin-top: 20px;
+
+			.img-co {
+				width: 80px;
+				height: 80px;
+				border-radius: 50px;
+			}
+		}
+
+		.columns-title {
+			margin: 0 auto;
+			text-align: center;
+			width: 80%;
+		}
+
+		.columns-count {
+			margin: 0 auto;
+			margin-bottom: 20px;
+			text-align: center;
+			width: 80%;
+		}
+
+		.columns-des {
+			margin: 0 auto;
+			margin-bottom: 20px;
+			text-align: center;
+			height: 50px;
+			width: 80%;
+
+			.text-columns {
+				width: 100%;
+				height: 42px;
+				overflow: hidden; //溢出内容隐藏
+				text-overflow: ellipsis; //当文本溢出时显示省略标记
+			}
+		}
+
+		.columns-btn {
+			margin: 0 auto;
+			text-align: center;
+		}
 	}
 
-	.btn-favorite {
+	.btn-ligth-blue {
 		border-radius: 3px;
 		background-color: #ebf5ff;
 		color: #6495ed;
@@ -228,204 +444,17 @@
 		height: 34px;
 	}
 
-	.banner {
-		width: 80%;
-		margin: 0 auto;
-		height: 80px;
-		// border: 2px solid #000000;
-		background-color: #f6f6f6;
-		display: flex;
-		align-items: center;
-
-		img {
-			height: 60%;
-		}
-	}
-
-	.cards-columns {
-		width: 80%;
-		margin-right: 10%;
-		margin: 0 auto;
-		height: 340px;
-		
-		.card-columns {
-			float: left;
-			margin-right: 18px;
-			margin-bottom: 20px;
-			width: 23%;
-			height: 320px;
-			background-color: #FFFFFF;
-			border-radius: 10px;
-
-			.img-columns {
-				margin: 0 auto;
-				width: 80px;
-				margin-bottom: 20px;
-				margin-top: 20px;
-				.img-co {
-					width: 80px;
-					height: 80px;
-					border-radius: 50px;
-				}
-
-			}
-
-			.columns-title {
-				margin: 0 auto;
-				text-align: center;
-				width: 80%;
-			}
-
-			.columns-count {
-				margin: 0 auto;
-				margin-bottom: 20px;
-				text-align: center;
-				width: 80%;
-			}
-
-			.columns-des {
-				margin: 0 auto;
-				margin-bottom: 20px;
-				text-align: center;
-				height: 50px;
-				width: 80%;
-				.text-columns{
-					width: 100%;
-					height: 42px;
-					overflow: hidden; //溢出内容隐藏
-					text-overflow: ellipsis; //当文本溢出时显示省略标记
-				}
-			}
-			.columns-btn {
-				margin: 0 auto;
-				text-align: center;
-			}
-		}
-	}
-
-	.cards {
-		width: 80%;
-		margin: 0 auto;
-		margin-right: 10%;
-		height: 900px;
-
-		.card {
-			float: left;
-			margin-right: 18px;
-			margin-bottom: 20px;
-			width: 48%;
-			height: 430px;
-			background-color: #FFFFFF;
-			border-radius: 10px;
-
-			// border: 2px solid #000000;
-			.img {
-				width: 100%;
-				height: 200px;
-				border-top-left-radius: 10px;
-				border-top-right-radius: 10px;
-				// border: 2px solid #000000;
-			}
-
-			.talk {
-				width: 100%;
-				height: 230px;
-				padding: 20px 20px 20px 20px;
-
-				// border: 2px solid #000000;
-				.talk-content {
-					margin-top: 20px;
-					margin-bottom: 20px;
-				}
-
-				.talk-img {
-					margin-right: 6px;
-				}
-
-				.round-btn {
-					border-radius: 3px;
-					background-color: #ffffff;
-					color: #0084ff;
-					font-size: 14px;
-					font-weight: 600;
-					border: none;
-					width: 102px;
-				}
-			}
-
-			.round-talk {
-				margin: 20px 20px 20px 20px;
-
-				.round-tip {
-					margin-bottom: 20px;
-				}
-			}
-
-			.head-box {
-				margin: 20px 20px 20px 20px;
-
-				.title-box {
-					margin-bottom: 20px;
-				}
-
-				.creator {
-					margin-left: 8px;
-					margin-top: 8px;
-				}
-			}
-
-			.body-box {
-				margin: 20px 20px 20px 20px;
-
-				.tip-box {
-					margin-bottom: 20px;
-
-					.answer {
-						margin-top: 10px;
-						margin-bottom: 10px;
-					}
-				}
-			}
-		}
-
-		.card-roundtable {
-			float: left;
-			margin-right: 18px;
-			margin-bottom: 50px;
-			width: 48%;
-			height: 200px;
-			background-color: #FFFFFF;
-			border-radius: 10px;
-
-			.img {
-				width: 100%;
-				height: 200px;
-				border-radius: 10px;
-				// border: 2px solid #000000;
-			}
-
-			.talk {
-				width: 100%;
-				height: 230px;
-				padding: 20px 20px 20px 20px;
-				// border: 2px solid #000000;
-			}
-		}
-	}
-
-	.btn-box {
-		width: 100%;
-		display: flex;
-		justify-content: center;
-		align-content: center;
-
-		.btn {
-			align-items: center;
-			padding: 0 24px 0 24px;
-			height: 48px;
-			background-color: #fff;
-			border-radius: 25px;
-			border: none;
-		}
+	.all {
+		width: 150px;
+		height: 50px;
+		border: 1px solid #eee;
+		background-color: #fff;
+		color: #8590a6;
+		cursor: pointer;
+		font-weight: 600;
+		border-radius: 50px;
+		line-height: 50px;
+		text-align: center;
+		text-decoration: none;
 	}
 </style>

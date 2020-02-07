@@ -1,27 +1,30 @@
 <template>
-	<div class="body">
+	<div>
 		<div class="banner">
-			<div class="center">
-				<svg class="icon-explore" fill="currentColor" viewBox="0 0 24 24" width="36" height="36"><path d="M7.667 3.667h11.466a1.2 1.2 0 0 1 1.2 1.2v13.066a2.4 2.4 0 0 1-2.4 2.4H6.467V4.867a1.2 1.2 0 0 1 1.2-1.2zM4.2 9.619h1.689v10.714H5.4a2.4 2.4 0 0 1-2.4-2.4V10.82a1.2 1.2 0 0 1 1.2-1.2zm5.178-2.38a.6.6 0 0 0-.6.6v.585a.6.6 0 0 0 .6.6h8.044a.6.6 0 0 0 .6-.6v-.586a.6.6 0 0 0-.6-.6H9.378zm0 3.57a.6.6 0 0 0-.6.6v.586a.6.6 0 0 0 .6.6h8.044a.6.6 0 0 0 .6-.6v-.585a.6.6 0 0 0-.6-.6H9.378zm0 3.572a.6.6 0 0 0-.6.6v.586a.6.6 0 0 0 .6.6h4.578a.6.6 0 0 0 .6-.6v-.586a.6.6 0 0 0-.6-.6H9.378z" fill-rule="evenodd"></path></svg>
-				<h3>全部专题</h3>
-				<p class="bl-meta">共有{{specials.length}}个文章</p>
-			</div>
+			<svg class="logo" viewBox="0 0 24 24" width="32" height="32">
+				<path d="M7.667 3.667h11.466a1.2 1.2 0 0 1 1.2 1.2v13.066a2.4 2.4 0 0 1-2.4 2.4H6.467V4.867a1.2 1.2 0 0 1 1.2-1.2zM4.2 9.619h1.689v10.714H5.4a2.4 2.4 0 0 1-2.4-2.4V10.82a1.2 1.2 0 0 1 1.2-1.2zm5.178-2.38a.6.6 0 0 0-.6.6v.585a.6.6 0 0 0 .6.6h8.044a.6.6 0 0 0 .6-.6v-.586a.6.6 0 0 0-.6-.6H9.378zm0 3.57a.6.6 0 0 0-.6.6v.586a.6.6 0 0 0 .6.6h8.044a.6.6 0 0 0 .6-.6v-.585a.6.6 0 0 0-.6-.6H9.378zm0 3.572a.6.6 0 0 0-.6.6v.586a.6.6 0 0 0 .6.6h4.578a.6.6 0 0 0 .6-.6v-.586a.6.6 0 0 0-.6-.6H9.378z"
+				 fill-rule="evenodd"></path>
+			</svg>
+			<p class="page-title">全部专题</p>
+			<p class="page-count">共有{{ specials.length }}个专题</p>
 		</div>
-		<div class="cards">
-			<div class="card" v-for="(item,index) in specials" :key="index">
-				<div class="img"><img :src="item.banner" class="img"></div>
-				<div class="talk">
-					<p class="bl-title">{{ item.title}}</p>
-					<p class="bl-meta">{{ item.updated}} 更新，{{ item.viewCount }}次浏览</p>
-					<p class="">{{ item.introduction }}</p>
-					<span v-for="(section,index) in item.sections" :key="index" class="">
-						{{ section.sectionTitle }}
-					</span>
-				</div>
-			</div>
+		<div class="wrapper" ref="wrapper">
+			<ul class="content">
+				<li class="row fill-white" v-for="(item, index) in specials" :key="index">
+					<div class="col-4"><img :src="item.banner" alt="" /></div>
+					<div class="col-8">
+						<button class="btn-follow">关注专题</button>
+						<p class="title">{{ item.title }}</p>
+						<p class="meta">{{ item.updated }}更新, {{ item.viewCount }}次浏览</p>
+						<p class="introduction">{{ item.introduction }}</p>
+						<span v-for="(section, index) in item.sections" :key="index" class="section" v-if="index < 4">{{ section.sectionTitle }}</span>
+					</div>
+				</li>
+			</ul>
 		</div>
 	</div>
 </template>
+
 <script>
 	export default {
 		name: 'special',
@@ -30,81 +33,138 @@
 				specials: []
 			};
 		},
-		created() {
-			this.axios.get('http://localhost:8080/api/special/all').then(res => {
-				console.log(res);
-				this.specials = res.data.data;
+		mounted() {
+			this.$nextTick(() => {
+				this.scroll = new Bscroll(this.$refs.wrapper, {});
 			});
+		},
+		created() {
+			this.axios
+				.get(this.$store.state.baseUrl + '/special/all', {
+					params: {
+						offset: 0,
+						limit: 100
+					}
+				})
+				.then(res => {
+					console.log(res);
+					this.specials = res.data.data;
+				});
 		}
 	};
 </script>
-
 <style lang="scss" scoped>
-	.body {
-		margin-top: 62px;
-	}
-
-	h3 {
-		color: #1a1a1a;
-		font-size: 30px;
-	}
-
-	h4 {
-		color: #a8b2b4;
-		font-size: 20px;
+	.container {
+		margin-top: -10px;
 	}
 
 	.banner {
 		width: 100%;
-		margin: 0 auto;
-		height: 60px;
-		background-color: #ffffff;
+		margin-bottom: 10px;
+		height: 90px;
+		background-color: #fff;
+		box-shadow: 0 1px 3px 0 rgba(26, 26, 26, 0.1);
+		padding-left: 10%;
 		display: flex;
 		align-items: center;
-	
-		.center {
-			display: flex;
-			width: 80%;
-			margin: 0 auto;
-			align-items: center;
-			height: 60px;
+
+		.logo {
+			fill: #0084ff;
+			margin-right: 15px;
+		}
+
+		.page-title {
+			font-size: 25px;
+			font-weight: 600;
+			margin-right: 15px;
+		}
+
+		.page-count {
+			font-size: 15px;
+			color: #8590a6;
 		}
 	}
 
-	.cards {
+	.wrapper {
 		width: 80%;
 		margin: 0 auto;
-		.card {
-			width: 100%;
-			height: 220px;
-			margin-top: 10px;
-			background-color: #FFFFFF;
-			border-radius: 8px;
+
+		.row {
 			display: flex;
-			justify-content: flex-start;
-			align-content: center;
-			.img{
-				border-radius: 8px;
-				width: 400px;
-				height: 180px;
-				margin-top: 10px;
-				margin-left: 8px;
+			margin-bottom: 10px;
+			border: 1px solid #d6d6d6;
+			border-radius: 4px;
+			height: 200px;
+			padding: 20px;
+			box-sizing: border-box;
+			box-shadow: 0 1px 3px 0 rgba(26, 26, 26, 0.1);
+
+			.col-4 {
+				flex: 0 0 33%;
+				height: 100%;
+
+				img {
+					width: 100%;
+					height: 100%;
+					border-radius: 10px;
+				}
 			}
-			.talk{
-				// border: 2px solid #000000;
-				width: 600px;
-				height: 180px;
-				margin-top: 14px;
-				margin-left: 16px;
+
+			.col-8 {
+				position: relative;
+				flex: 0 0 66%;
+				text-align: left;
+				line-height: 28px;
+				padding-left: 15px;
+
+				.btn-follow {
+					position: absolute;
+					top: -5px;
+					right: 10px;
+					border: none;
+					outline: none;
+					flex-shrink: 0;
+					margin-left: 20px;
+					width: 88px;
+					height: 34px;
+					background-color: rgba(0, 132, 255, 0.08);
+					font-size: 14px;
+					color: #0084ff;
+					border-radius: 3px;
+					font-weight: 600;
+				}
+
+				h3 {
+					font-weight: 700;
+				}
+
+				.meta {
+					font-size: 13px;
+					color: #99a6c4;
+				}
+
+				.introduction {
+					font-size: 15px;
+					display: -webkit-box;
+					-webkit-box-orient: vertical;
+					-webkit-line-clamp: 2;
+					overflow: hidden;
+				}
+
+				.section {
+					background-color: #eee;
+					padding: 3px;
+					margin-right: 5px;
+					font-size: 13px;
+					color: #9091a7;
+				}
 			}
 		}
-
 	}
 
-	.img-circle {
-		padding: 5px;
-		width: 90%;
-		height: 90%;
-		border-radius: 10px;
+	.title {
+		font-size: 20px;
+		font-weight: 600;
+		margin-right: 15px;
 	}
 </style>

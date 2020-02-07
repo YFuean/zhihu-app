@@ -16,6 +16,11 @@ Vue.use( infiniteScroll);
 
 //引入全局统一的存储库,使用Vuex状态管理
 import store from './store/index.js';
+
+//圆桌取主色渐变
+import RGBaster from './util/rgbaster.js';
+Vue.use(VueAxios, axios, RGBaster)
+
 Vue.prototype.$store = store;
 
 Vue.config.productionTip = false

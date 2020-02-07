@@ -13,6 +13,7 @@ import RoundTable from '../views/RoundTable.vue'
 import Favorite from '../views/Favorite.vue'
 import zhuanlan from '../views/ZhuanLan'
 import Columns from '../views/Columns.vue'
+import People from '../views/People.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -85,6 +86,10 @@ const routes = [
 		path: 'columns/random',
 		component: () => import('../views/Columns.vue')
 	}]
+ },
+ {
+	 path:'/people',
+	 component: People
  },
  {
    path: '/login',
