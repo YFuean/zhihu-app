@@ -59,7 +59,25 @@ ul {
 .half-more-height {
 	height: 57%;
 }
+/* 常用的宽度设置 */
+.full-width{
+	width: 100%;
+}
 
+.normal-width {
+	width: 70%;
+}
+
+.half-width {
+	width: 50%;
+}
+
+.min-width {
+	width: 30%;
+}
+.half-more-width {
+	width: 57%;
+}
 
 /* ---------------------display的常用属性-------------------------- */
 .d-none {
@@ -383,7 +401,21 @@ ul {
 	margin: 0;
 }
 
-
+.m-0.5{
+	margin: 0.12rem;
+}
+.mt-0.5{
+	margin-top: 0.12rem;
+}
+.mr-0.5{
+	margin-right: 0.12rem;
+}
+.mb-0.5{
+	margin-bottom: 0.12rem;
+}
+.ml-0.5{
+	margin-left: 0.12rem;
+}
 .m-1 {
 	margin: 0.25rem;
 }

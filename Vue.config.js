@@ -12,6 +12,11 @@ var filmList = require('./src/data/film.json')
 var scienceList = require('./src/data/science.json')
 var sportList = require('./src/data/sport.json')
 var fashionList = require('./src/data/fashion.json')
+//等你来答数据
+var hotList = require('./src/data/waiting_hot.json')
+var potentialList = require('./src/data/waiting_potential.json')
+var newList = require('./src/data/waiting_new.json')
+var everyoneList = require('./src/data/waiting_everyone.json')
 //API路径
 var apiRoutes = express.Router()
 app.use('/api', apiRoutes)
@@ -78,6 +83,34 @@ module.exports = {
 					code: 1,
 					msg: '成功',
 					data: fashionList
+				})
+			})
+			app.get('/api/waiting-lists/hot', (req, res) => {
+				res.json({
+					code: 1,
+					msg: '成功',
+					data: hotList
+				})
+			})
+			app.get('/api/waiting-lists/potential', (req, res) => {
+				res.json({
+					code: 1,
+					msg: '成功',
+					data: potentialList
+				})
+			})
+			app.get('/api/waiting-lists/new', (req, res) => {
+				res.json({
+					code: 1,
+					msg: '成功',
+					data: newList
+				})
+			})
+			app.get('/api/waiting-lists/everyone', (req, res) => {
+				res.json({
+					code: 1,
+					msg: '成功',
+					data: everyoneList
 				})
 			})
 		}

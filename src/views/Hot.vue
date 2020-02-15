@@ -105,7 +105,6 @@ export default {
 			} else {
 				this.$router.push('/home/hot?list=' + param);
 			}
-			
 		}
 	}
 };
